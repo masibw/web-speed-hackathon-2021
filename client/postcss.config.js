@@ -9,5 +9,8 @@ module.exports = {
     postcssPresetEnv({
       stage: 3,
     }),
+    require('cssnano')({
+      preset: 'default',
+    }),
   ],
 };
