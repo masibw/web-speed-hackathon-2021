@@ -1,7 +1,6 @@
 module.exports = {
-  purge: [
-    './src/**/*.jsx',
-    './src/**/*.js',
-  ],
+  purge: {
+    content: ['puglic/**'],
+  },
   darkMode: false,
 };
