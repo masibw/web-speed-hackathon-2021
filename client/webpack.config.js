@@ -1,5 +1,6 @@
 const path = require('path');
-
+const TailwindCss = require('tailwindcss');
+const Autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
@@ -44,7 +45,16 @@ const config = {
         use: [
           { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader', options: { url: false } },
-          { loader: 'postcss-loader' },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  TailwindCss,
+                  Autoprefixer,
+                ]
+              }
+          }},
         ],
       },
     ],
